@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 class Feeling extends React.Component {
   state = {
-    feeling: '',
+    feeling: 0,
   }
 
   handleChange = (propertyName, event) => {

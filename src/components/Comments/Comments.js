@@ -13,7 +13,6 @@ class Comments extends React.Component {
     this.setState({
       [propertyName]: event.target.value,
     });
-    console.log("This should be the comment I typed in: ", this.state);
   };
 
   render() {

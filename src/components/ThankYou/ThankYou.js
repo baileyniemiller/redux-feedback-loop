@@ -8,7 +8,7 @@ const ThankYou = () => {
     <Route>
     <div>
       <h1>Thank you for submitting your feedback!</h1>
-      <Link to="/"><button>Leave New Feedback</button></Link>
+      <Link exact to="/"><button>Leave New Feedback</button></Link>
     </div>
     </Route>
   )
