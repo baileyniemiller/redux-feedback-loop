@@ -17,7 +17,7 @@ const feelingReducer = (state = [], action) => {
 const understandingReducer = (state = [], action) => {
   let newState = [...state];
   if (action.type === "ADD_UNDERSTANDING") {
-    newState = [...action.payload];
+    newState = [action.payload];
   }
   return newState;
 };
@@ -25,7 +25,7 @@ const understandingReducer = (state = [], action) => {
 const supportReducer = (state = [], action) => {
   let newState = [...state];
   if (action.type === "ADD_SUPPORT") {
-    newState = [...action.payload];
+    newState = [action.payload];
   }
   return newState;
 };
@@ -33,7 +33,7 @@ const supportReducer = (state = [], action) => {
 const commentsReducer = (state = [], action) => {
   let newState = [...state];
   if (action.type === "ADD_COMMENTS") {
-    newState = [...action.payload];
+    newState = [action.payload];
   }
   return newState;
 };

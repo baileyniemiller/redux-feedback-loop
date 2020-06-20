@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Route, Link } from "react-router-dom";
 import Header from "../Header/Header.js";
 import { withRouter } from "react-router-dom";
 
@@ -13,7 +13,6 @@ class Understanding extends React.Component {
     this.setState({
       [propertyName]: Number(event.target.value),
     });
-    console.log('This should be the number I typed in: ', this.state);
   };
 
   render() {
