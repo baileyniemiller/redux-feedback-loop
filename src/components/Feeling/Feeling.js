@@ -4,16 +4,29 @@ import { HashRouter as Route, Link } from "react-router-dom";
 import Header from "../Header/Header.js";
 import { withRouter } from "react-router-dom";
 
+// Feelings component 
+
+// setting state to null - it will eventually be an number
 class Feeling extends React.Component {
   state = {
     feeling: null,
-  }
+  };
 
+  // start HandleChange - this fires when the "next" button
+  // is clicked. We are setting state to the input value
+  // --> whatever the user types.
   handleChange = (propertyName, event) => {
     this.setState({
       [propertyName]: Number(event.target.value),
     });
-  }
+  }; // end handleChange
+
+
+  // in the render function, there is the input where
+  // the user can type 1-6.
+  // On click of the "next" button then runs a dispatch to the feeling
+  // reducer sending the new state (whatever the user typed)
+  // as the payload.
 
   render() {
     return (
@@ -28,13 +41,17 @@ class Feeling extends React.Component {
               className="feelingIn"
               onChange={(event) => this.handleChange("feeling", event)}
             />
-            <Link to="/understanding"><button
-              onClick={() => {
-                this.props.dispatch({
-                  type: "ADD_FEELING",
-                  payload: this.state.feeling,
-                });
-              }}>Next</button>
+            <Link to="/understanding">
+              <button
+                onClick={() => {
+                  this.props.dispatch({
+                    type: "ADD_FEELING",
+                    payload: this.state.feeling,
+                  });
+                }}
+              >
+                Next
+              </button>
             </Link>
           </div>
         </div>

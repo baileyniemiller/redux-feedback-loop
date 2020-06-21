@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
-
+// feelingReducer --> grabs user's feeling 1-6
 const feelingReducer = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_FEELING") {
@@ -15,6 +15,7 @@ const feelingReducer = (state = null, action) => {
   return newState;
 };
 
+// understandingReducer --> grabs user's understanding 1-6
 const understandingReducer = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_UNDERSTANDING") {
@@ -23,6 +24,7 @@ const understandingReducer = (state = null, action) => {
   return newState;
 };
 
+// supportReducer --> grabs user's support 1-6
 const supportReducer = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_SUPPORT") {
@@ -30,7 +32,7 @@ const supportReducer = (state = null, action) => {
   }
   return newState;
 };
-
+ // commentsReducer --> grabs user's comment/input
 const commentsReducer = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_COMMENTS") {
@@ -39,6 +41,9 @@ const commentsReducer = (state = null, action) => {
   return newState;
 };
 
+// feedbackReducer --> takes all four reducers:
+// feeling, understanding, support, comments
+// and has all info from each one
 const feedbackReducer = (state = [], action) => {
   let newState = [...state];
   if (action.type === "ADD_FEEDBACK") {

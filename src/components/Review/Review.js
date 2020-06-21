@@ -3,12 +3,19 @@ import { Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from 'axios';
 
+// Review component
+
 class Review extends Component {
 
+  // start feedbackInfo --> on click of the "submit" button
   feedbackInfo = () => {
+    // bringing in each reducer so we can just refer to the name later
     const { feelingReducer, understandingReducer, supportReducer, commentsReducer, dispatch } = this.props;
-    // you want state to be perfect here -- ready to go
-    // make a copy of state
+    // making a copy of state
+    // creating a variable newFeedback that contains an object
+    // with each key representing the user's feedback
+    // being stored in the corresponding reducer.
+    // we will use this in the payload.
     const newFeedback = {
       ...this.state, 
       feeling: feelingReducer, 
@@ -16,20 +23,19 @@ class Review extends Component {
       support: supportReducer,
       comments: commentsReducer
     };
-    // we need the feedback (from props)
     console.log(newFeedback);
+    // POST to /feedback
     axios.post("/feedback", newFeedback)
       .then((res) => {
         console.log(res);
+        // dispatching so all of the info can be saved to the database
         dispatch({ type: "ADD_FEEDBACK", payload: newFeedback });
-        // redirect the user to the home page
-        // this.props.history.push("/review");
         console.log('Success in posting feedback.');
       })
       .catch((err) => {
         console.log(err);
         alert(err);
-      });
+      }); // end POST
   };
 
   render() {

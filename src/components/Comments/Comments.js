@@ -4,16 +4,29 @@ import { HashRouter as Route, Link } from "react-router-dom";
 import Header from "../Header/Header.js";
 import { withRouter } from "react-router-dom";
 
+// Comments component
+
+// setting local state to ane empty string
 class Comments extends React.Component {
   state = {
     comments: '',
   };
 
+// start HandleChange - this fires when the "next" button
+// is clicked. We are setting state to the input value
+// --> whatever the user types.
   handleChange = (propertyName, event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
-  };
+  }; // end handleChange
+
+
+  // in the render function, there is the text area where
+  // the user can add a comment.
+  // On click of the "next" button then runs a dispatch to the comments 
+  // reducer sending the new state (whatever the user commented)
+  // as the payload.
 
   render() {
     return (

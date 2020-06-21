@@ -4,16 +4,29 @@ import { HashRouter as Route, Link } from "react-router-dom";
 import Header from "../Header/Header.js";
 import { withRouter } from "react-router-dom";
 
+// Support component
+
+// setting state to null - will eventually be a number
 class Support extends React.Component {
   state = {
     support: null,
   };
 
+  // start HandleChange - this fires when the "next" button
+  // is clicked. We are setting state to the input value
+  // --> whatever the user types.
   handleChange = (propertyName, event) => {
     this.setState({
       [propertyName]: Number(event.target.value),
     });
-  };
+  }; // end handleChange
+
+
+  // in the render function, there is the input where
+  // the user can type 1-6.
+  // On click of the "next" button then runs a dispatch to the support
+  // reducer sending the new state (whatever the user typed)
+  // as the payload.
 
   render() {
     console.log("Understanding: ", this.props.understandingReducer);
@@ -36,7 +49,10 @@ class Support extends React.Component {
                     type: "ADD_SUPPORT",
                     payload: this.state.support,
                   });
-                }}>Next</button>
+                }}
+              >
+                Next
+              </button>
             </Link>
           </div>
         </div>

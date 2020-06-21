@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 import './App.css';
 import {connect} from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
@@ -10,6 +9,13 @@ import Support from "../Support/Support.js";
 import Comments from "../Comments/Comments.js";
 import Review from "../Review/Review.js";
 import ThankYou from "../ThankYou/ThankYou.js";
+
+
+// App.js contains the start page
+// and each individual component foe each question
+// Feeling, understanding, support, and comments
+// Then we have the review and thank you page
+// Each component has its own route
 
 class App extends Component {
 
