@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 class Support extends React.Component {
   state = {
-    support: 0,
+    support: null,
   };
 
   handleChange = (propertyName, event) => {

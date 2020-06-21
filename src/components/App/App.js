@@ -21,7 +21,13 @@ class App extends Component {
             <Header />
             <div className="button">
               <Link to="/feeling">
-                <button className="startButton">Start</button>
+                <button
+                  onClick={() => {
+                      this.props.dispatch({
+                      type: "RESET_FEEDBACK",
+                      payload: [],
+                    });
+                  }}>Start</button>
               </Link>
             </div>
             <br />

@@ -7,32 +7,32 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
 
-const feelingReducer = (state, action) => {
-  let newState = [state];
+const feelingReducer = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_FEELING") {
     newState = action.payload;
   }
   return newState;
 };
 
-const understandingReducer = (state, action) => {
-  let newState = [state];
+const understandingReducer = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_UNDERSTANDING") {
     newState = action.payload;
   }
   return newState;
 };
 
-const supportReducer = (state, action) => {
-  let newState = [state];
+const supportReducer = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_SUPPORT") {
     newState = action.payload;
   }
   return newState;
 };
 
-const commentsReducer = (state, action) => {
-  let newState = [state];
+const commentsReducer = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_COMMENTS") {
     newState = action.payload;
   }
@@ -43,6 +43,8 @@ const feedbackReducer = (state = [], action) => {
   let newState = [...state];
   if (action.type === "ADD_FEEDBACK") {
     newState = [...state, action.payload];
+  } else if (action.type === "RESET_FEEDBACK") {
+    newState = [];
   }
   return newState;
 };

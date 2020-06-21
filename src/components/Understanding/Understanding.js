@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 class Understanding extends React.Component {
   state = {
-    understanding: 0,
+    understanding: null,
   };
 
   handleChange = (propertyName, event) => {
