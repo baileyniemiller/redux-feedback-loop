@@ -16,6 +16,7 @@ class Understanding extends React.Component {
   };
 
   render() {
+    console.log('Feeling: ', this.props.feelingReducer);
     return (
       <Route path="/understanding">
         <div>

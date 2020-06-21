@@ -16,6 +16,7 @@ class Support extends React.Component {
   };
 
   render() {
+    console.log("Understanding: ", this.props.understandingReducer);
     return (
       <Route path="/support">
         <div>

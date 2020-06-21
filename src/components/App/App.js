@@ -55,7 +55,8 @@ const mapStateToProps = (state) => {
     feelingReducer: state.feelingReducer,
     understandingReducer: state.understandingReducer,
     supportReducer: state.supportReducer,
-    commentsReducer: state.commentsReducer
+    commentsReducer: state.commentsReducer,
+    feedbackReducer: state.feedbackReducer
   };
 };
 

@@ -39,10 +39,10 @@ class Review extends Component {
         <div className="reviewBody">
           <h2>Confirm Your Feedback</h2>
           <div className="feedbackDisplay">
-            <p>Feelings: {feelingReducer.feeling}</p>
-            <p>Understanding: {understandingReducer.understanding}</p>
-            <p>Support: {supportReducer.support}</p>
-            <p>Comments: {commentsReducer.comments}</p>
+            <p>Feelings: {feelingReducer}</p>
+            <p>Understanding: {understandingReducer}</p>
+            <p>Support: {supportReducer}</p>
+            <p>Comments: {commentsReducer}</p>
           </div>
            <Link to="/thank-you">
               <button
@@ -60,6 +60,7 @@ const mapStateToProps = (state) => {
     understandingReducer: state.understandingReducer,
     supportReducer: state.supportReducer,
     commentsReducer: state.commentsReducer,
+    feedbackReducer: state.feedbackReducer
   };
 };
 
