@@ -25,7 +25,6 @@ class Support extends React.Component {
             <h2>On a scale of 1-6, how well are you being supported?</h2>
             <input
               type="number"
-              value={this.state.support}
               placeholder="Support?"
               className="supportIn"
               onChange={(event) => this.handleChange("support", event)}

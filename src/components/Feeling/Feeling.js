@@ -24,7 +24,6 @@ class Feeling extends React.Component {
             <h2>On a scale of 1-6, how are you feeling today?</h2>
             <input
               type="number"
-              value={this.state.feeling}
               placeholder="Feeling?"
               className="feelingIn"
               onChange={(event) => this.handleChange("feeling", event)}

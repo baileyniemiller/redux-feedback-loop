@@ -25,7 +25,6 @@ class Comments extends React.Component {
             <textarea
               rows="5"
               cols="50"
-              value={this.state.comments}
               placeholder="Comments?"
               className="commentsIn"
               onChange={(event) => this.handleChange("comments", event)}

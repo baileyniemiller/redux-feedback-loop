@@ -16,7 +16,6 @@ class Understanding extends React.Component {
   };
 
   render() {
-    console.log('Feeling: ', this.props.feelingReducer);
     return (
       <Route path="/understanding">
         <div>
@@ -25,7 +24,6 @@ class Understanding extends React.Component {
             <h2>On a scale of 1-6, how well are you understanding the content?</h2>
             <input
               type="number"
-              value={this.state.feeling}
               placeholder="Understanding?"
               className="understandingIn"
               onChange={(event) => this.handleChange("understanding", event)}

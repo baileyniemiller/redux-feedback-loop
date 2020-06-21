@@ -10,7 +10,7 @@ class Review extends Component {
     // you want state to be perfect here -- ready to go
     // make a copy of state
     const newFeedback = {
-      ...this.state, 
+      // ...this.state, 
       feeling: feelingReducer, 
       understanding: understandingReducer,
       support: supportReducer,
