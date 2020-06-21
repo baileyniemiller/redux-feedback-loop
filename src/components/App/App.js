@@ -9,6 +9,7 @@ import Support from "../Support/Support.js";
 import Comments from "../Comments/Comments.js";
 import Review from "../Review/Review.js";
 import ThankYou from "../ThankYou/ThankYou.js";
+import Button from "@material-ui/core/Button";
 
 
 // App.js contains the start page
@@ -27,13 +28,19 @@ class App extends Component {
             <Header />
             <div className="button">
               <Link to="/feeling">
-                <button
+                <Button
+                  id="startButton"
+                  variant="contained"
+                  color="secondary"
                   onClick={() => {
-                      this.props.dispatch({
+                    this.props.dispatch({
                       type: "RESET_FEEDBACK",
                       payload: [],
                     });
-                  }}>Start</button>
+                  }}
+                >
+                  Start
+                </Button>
               </Link>
             </div>
             <br />
