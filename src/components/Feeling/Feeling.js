@@ -8,6 +8,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import "./Feeling.css"
+import FeelingHeader from "./FeelingHeader.js";
 
 // Feelings component 
 
@@ -42,21 +45,12 @@ class Feeling extends React.Component {
   // as the payload.
   render() {
     return (
+      <Paper elevation={3} className="feelPaper">
       <Route path="/feeling">
         <div>
-          <Header />
-          <div className="feelingBody">
-            <h2>On a scale of 1-6, how are you feeling today?</h2>
-            <form onSubmit={this.submitInfo}>
-              {/* // onSubmit={(event) => {
-            //   event.preventDefault()
-            //   this.props.dispatch({
-            //     type: "ADD_FEELING",
-            //     payload: this.state.feeling,
-            //   });
-            //     this.props.history.push("/understanding");
-            // }} */}
-
+          <FeelingHeader />
+          <div>
+            <form onSubmit={this.submitInfo} className="feelingBody">
               <InputLabel id="feelingLabel">Feeling?</InputLabel>
               <Select
                 required
@@ -72,14 +66,15 @@ class Feeling extends React.Component {
                 <MenuItem value={2}>2</MenuItem>
                 <MenuItem value={1}>1</MenuItem>
               </Select>
-              <FormHelperText>Required</FormHelperText>
-              <Button variant="contained" color="primary" type="submit">
+              <FormHelperText id="helperText">Required</FormHelperText>
+              <Button variant="contained" color="primary" type="submit" className="feelNext">
                 Next
               </Button>
             </form>
           </div>
         </div>
       </Route>
+      </Paper>
     );
   }
 }

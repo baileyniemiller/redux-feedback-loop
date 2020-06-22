@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from 'axios';
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 
 // Review component
 
@@ -45,15 +53,37 @@ class Review extends Component {
         <div className="reviewBody">
           <h2>Confirm Your Feedback</h2>
           <div className="feedbackDisplay">
-            <p>Feelings: {feelingReducer}</p>
-            <p>Understanding: {understandingReducer}</p>
-            <p>Support: {supportReducer}</p>
-            <p>Comments: {commentsReducer}</p>
+            <TableContainer component={Paper}>
+              <Table aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Feelings</TableCell>
+                    <TableCell align="left">Understanding</TableCell>
+                    <TableCell align="left">Support</TableCell>
+                    <TableCell align="left">Comments</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell align="left">{feelingReducer}</TableCell>
+                    <TableCell align="left">{understandingReducer}</TableCell>
+                    <TableCell align="left">{supportReducer}</TableCell>
+                    <TableCell align="left">{commentsReducer}</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
           </div>
-           <Link to="/thank-you">
-              <button
-                onClick={() => {this.feedbackInfo()}}>Submit</button>
-            </Link>
+          <Link to="/thank-you">
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              onClick={() => {
+                this.feedbackInfo();
+              }}>Submit
+            </Button>
+          </Link>
         </div>
       </Route>
     );
