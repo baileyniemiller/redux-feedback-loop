@@ -1,0 +1,19 @@
+.supportPaper {
+  width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+  height: 430px;
+}
+
+.supportBody {
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+#demo-simple-select-required {
+  width: 70px;
+}
+
+#helperText {
+  margin-bottom: 10px;
+}

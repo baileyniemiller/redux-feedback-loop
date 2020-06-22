@@ -1,13 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Route, Link } from "react-router-dom";
-import Header from "../Header/Header.js";
+import SupportHeader from "./SupportHeader.js";
 import { withRouter } from "react-router";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
 
 // Support component
 
@@ -44,35 +45,36 @@ class Support extends React.Component {
 
   render() {
     return (
-      <Route path="/support">
-        <div>
-          <Header />
-          <div className="supportBody">
-            <h2>On a scale of 1-6, how well are you being supported?</h2>
-            <form onSubmit={this.submitInfo}>
-              <InputLabel id="supportLabel">Support?</InputLabel>
-              <Select
-                required
-                labelId="supportSelectLabel"
-                id="demo-simple-select-required"
-                value={this.state.support}
-                onChange={(event) => this.handleChange("support", event)}
-              >
-                <MenuItem value={6}>6</MenuItem>
-                <MenuItem value={5}>5</MenuItem>
-                <MenuItem value={4}>4</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={1}>1</MenuItem>
-              </Select>
-              <FormHelperText>Required</FormHelperText>
-              <Button variant="contained" color="primary" type="submit">
-                Next
-              </Button>
-            </form>
+      <Paper elevation={3} className="feelPaper">
+        <Route path="/support">
+          <div>
+            <SupportHeader />
+            <div className="supportBody">
+              <form onSubmit={this.submitInfo}>
+                <InputLabel id="supportLabel">Support?</InputLabel>
+                <Select
+                  required
+                  labelId="supportSelectLabel"
+                  id="demo-simple-select-required"
+                  value={this.state.support}
+                  onChange={(event) => this.handleChange("support", event)}
+                >
+                  <MenuItem value={6}>6</MenuItem>
+                  <MenuItem value={5}>5</MenuItem>
+                  <MenuItem value={4}>4</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={1}>1</MenuItem>
+                </Select>
+                <FormHelperText id="helperText">Required</FormHelperText>
+                <Button variant="contained" color="primary" type="submit">
+                  Next
+                </Button>
+              </form>
+            </div>
           </div>
-        </div>
-      </Route>
+        </Route>
+      </Paper>
     );
   }
 }

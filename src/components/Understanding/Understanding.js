@@ -1,13 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Route, Link } from "react-router-dom";
-import Header from "../Header/Header.js";
 import { withRouter } from "react-router";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import UnderstandingHeader from "./UnderstandingHeader.js"
+import Paper from "@material-ui/core/Paper";
 
 // Understanding component
 
@@ -42,37 +43,38 @@ class Understanding extends React.Component {
   // as the payload.
   render() {
     return (
-      <Route path="/understanding">
-        <div>
-          <Header />
-          <div className="understandingBody">
-            <h2>
-              On a scale of 1-6, how well are you understanding the content?
-            </h2>
-            <form onSubmit={this.submitInfo}>
-              <InputLabel id="understandingLabel">Understanding?</InputLabel>
-              <Select
-                required
-                labelId="understandingSelectLabel"
-                id="demo-simple-select-required"
-                value={this.state.understanding}
-                onChange={(event) => this.handleChange("understanding", event)}
-              >
-                <MenuItem value={6}>6</MenuItem>
-                <MenuItem value={5}>5</MenuItem>
-                <MenuItem value={4}>4</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={1}>1</MenuItem>
-              </Select>
-              <FormHelperText>Required</FormHelperText>
-              <Button variant="contained" color="primary" type="submit">
-                Next
-              </Button>
-            </form>
+      <Paper elevation={3} className="underPaper">
+        <Route path="/understanding">
+          <div>
+            <UnderstandingHeader />
+            <div className="understandBody">
+              <form onSubmit={this.submitInfo}>
+                <InputLabel id="understandingLabel">Understanding?</InputLabel>
+                <Select
+                  required
+                  labelId="understandingSelectLabel"
+                  id="demo-simple-select-required"
+                  value={this.state.understanding}
+                  onChange={(event) =>
+                    this.handleChange("understanding", event)
+                  }
+                >
+                  <MenuItem value={6}>6</MenuItem>
+                  <MenuItem value={5}>5</MenuItem>
+                  <MenuItem value={4}>4</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={1}>1</MenuItem>
+                </Select>
+                <FormHelperText id="helperText">Required</FormHelperText>
+                <Button variant="contained" color="primary" type="submit">
+                  Next
+                </Button>
+              </form>
+            </div>
           </div>
-        </div>
-      </Route>
+        </Route>
+      </Paper>
     );
   }
 }
