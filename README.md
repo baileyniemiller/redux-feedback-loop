@@ -8,7 +8,7 @@ This is a feedback form that allows a user to rate their feeling, understanding,
 
 This is a screenshot of the first page you will see after you click START.
 
-![alt text](images/feedback-screenshot.png "Feedback Form Screenshot")
+![alt text](public/images/feedback-screenshot.png "Feedback Form Screenshot")
 
 ## Built With
 
