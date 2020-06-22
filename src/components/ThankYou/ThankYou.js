@@ -14,7 +14,7 @@ const ThankYou = () => {
           <Link exact to="/">
             <Button
               variant="contained"
-              color="primary"
+              color="secondary"
               type="submit"
               className="thanksButton"
             >Leave New Feedback</Button>

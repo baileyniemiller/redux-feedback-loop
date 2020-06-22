@@ -10,6 +10,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
+import ReviewHeader from "./ReviewHeader.js";
 
 // Review component
 
@@ -49,43 +50,48 @@ class Review extends Component {
   render() {
     const {feelingReducer, understandingReducer, supportReducer, commentsReducer} = this.props;
     return (
-      <Route path="/review">
-        <div className="reviewBody">
-          <h2>Confirm Your Feedback</h2>
-          <div className="feedbackDisplay">
-            <TableContainer component={Paper}>
-              <Table aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell align="left">Feelings</TableCell>
-                    <TableCell align="left">Understanding</TableCell>
-                    <TableCell align="left">Support</TableCell>
-                    <TableCell align="left">Comments</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <TableRow>
-                    <TableCell align="left">{feelingReducer}</TableCell>
-                    <TableCell align="left">{understandingReducer}</TableCell>
-                    <TableCell align="left">{supportReducer}</TableCell>
-                    <TableCell align="left">{commentsReducer}</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
+      <Paper elevation={3} className="feelPaper">
+        <Route path="/review">
+          <div className="reviewBody">
+            <ReviewHeader />
+            <div className="feedbackDisplay">
+              <TableContainer component={Paper} id="table">
+                <Table aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell align="center">Feelings</TableCell>
+                      <TableCell align="center">Understanding</TableCell>
+                      <TableCell align="center">Support</TableCell>
+                      <TableCell align="center">Comments</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell align="center">{feelingReducer}</TableCell>
+                      <TableCell align="center">{understandingReducer}</TableCell>
+                      <TableCell align="center">{supportReducer}</TableCell>
+                      <TableCell align="center">{commentsReducer}</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
+            <Link to="/thank-you">
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                id="submitButton"
+                onClick={() => {
+                  this.feedbackInfo();
+                }}
+              >
+                Submit
+              </Button>
+            </Link>
           </div>
-          <Link to="/thank-you">
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              onClick={() => {
-                this.feedbackInfo();
-              }}>Submit
-            </Button>
-          </Link>
-        </div>
-      </Route>
+        </Route>
+        </Paper>
     );
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { HashRouter as Route, Link } from "react-router-dom";
-import Header from "../Header/Header.js";
 import { withRouter } from "react-router";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";

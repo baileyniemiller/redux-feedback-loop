@@ -6,7 +6,7 @@ import "./Understanding.css";
 class UnderstandingHeader extends Component {
   render() {
     return (
-      <header className="mainHeader">
+      <header className="underHeader">
         <h1 className="title">2</h1>
         <h4 className="description">
           On a scale of 1-6, how well are you understanding the content?

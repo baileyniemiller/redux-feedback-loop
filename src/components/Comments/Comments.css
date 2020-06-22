@@ -1,0 +1,28 @@
+.commentPaper {
+  width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+  height: 430px;
+}
+
+.commentBody {
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+#demo-simple-select-required {
+  width: 70px;
+}
+
+#helperText {
+  margin-bottom: 10px;
+}
+
+#commentButton {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.commentField {
+  width: 310px;
+}

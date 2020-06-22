@@ -1,0 +1,35 @@
+.feelPaper {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+  height: 430px;
+}
+
+.feelingBody {
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+#demo-simple-select-required {
+  width: 70px;
+}
+
+#helperText {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+#submitButton {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.reviewHeader {
+  background-color: #ffa12e;
+  color: white;
+  padding: 30px;
+  margin-top: 100px;
+}

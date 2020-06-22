@@ -47,8 +47,8 @@ class Understanding extends React.Component {
         <Route path="/understanding">
           <div>
             <UnderstandingHeader />
-            <div className="understandBody">
-              <form onSubmit={this.submitInfo}>
+            <div>
+              <form onSubmit={this.submitInfo} className="understandBody">
                 <InputLabel id="understandingLabel">Understanding?</InputLabel>
                 <Select
                   required

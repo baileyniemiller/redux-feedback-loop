@@ -17,3 +17,19 @@
 #helperText {
   margin-bottom: 10px;
 }
+
+.feelHeader {
+  background-color: #ffa12e;
+  color: white;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+.title {
+  font-size: 45px;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: lighter;
+}

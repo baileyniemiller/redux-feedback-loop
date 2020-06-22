@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { HashRouter as Route, Link } from "react-router-dom";
-import Header from "../Header/Header.js";
+import CommentsHeader from "./CommentsHeader.js";
 import { withRouter } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
 
 // Comments component
 
@@ -40,27 +41,27 @@ class Comments extends React.Component {
 
   render() {
     return (
-      <Route path="/comments">
-        <div>
-          <Header />
-          <div className="commentsBody">
-            <h2>
-              If you'd like, feel free to leave any comments or questions.
-            </h2>
-            <form onSubmit={this.submitInfo}>
-              <TextField
-                id="outlined-required"
-                label="Comments?"
-                variant="outlined"
-                onChange={(event) => this.handleChange("comments", event)}
-              />
-              <Button variant="contained" color="primary" type="submit">
-                Next
-              </Button>
-            </form>
+      <Paper elevation={3} className="commentPaper">
+        <Route path="/comments">
+          <div>
+            <CommentsHeader />
+            <div className="commentBody">
+              <form onSubmit={this.submitInfo}>
+                <TextField
+                  className="commentField"
+                  id="outlined-required"
+                  label="Comments?"
+                  variant="outlined"
+                  onChange={(event) => this.handleChange("comments", event)}
+                />
+                <Button variant="contained" color="primary" type="submit" id="commentButton">
+                  Next
+                </Button>
+              </form>
+            </div>
           </div>
-        </div>
-      </Route>
+        </Route>
+      </Paper>
     );
   }
 }
